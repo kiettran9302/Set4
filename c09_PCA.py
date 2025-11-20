@@ -64,13 +64,13 @@ def plot_PCA(X,Y,resp,thrs,nam1,nam2):
 
 fig=plt.figure(figsize=(8,8))#,dpi=150)
 plot_PCA(pr[:,0],pr[:,1],SMA_resp,[2,8],'First','Second')
-# fig.savefig('c09_PCA-a.png',bbox_inches="tight",facecolor="white")
+fig.savefig('c09_PCA-a.png',bbox_inches="tight",facecolor="white")
 fig=plt.figure(figsize=(8,8))#,dpi=150)
 plot_PCA(pr[:,0],pr[:,2],SMA_resp,[2,8],'First','Third')
-# fig.savefig('c09_PCA-b.png',bbox_inches="tight",facecolor="white")
+fig.savefig('c09_PCA-b.png',bbox_inches="tight",facecolor="white")
 fig=plt.figure(figsize=(8,8))#,dpi=150)
 plot_PCA(pr[:,1],pr[:,2],SMA_resp,[2,8],'Second','Third')
-# fig.savefig('c09_PCA-c.png',bbox_inches="tight",facecolor="white")
+fig.savefig('c09_PCA-c.png',bbox_inches="tight",facecolor="white")
 
 # --- a --- 
 # Plot the percentage of variance explained by each PC as a function of PC number. This
@@ -81,7 +81,7 @@ plot_PCA(pr[:,1],pr[:,2],SMA_resp,[2,8],'Second','Third')
 
 explained_variance_ratio = pca.explained_variance_ratio_
 cumulative_variance = np.cumsum(explained_variance_ratio)
-fig = plt.figure(figsize=(10, 5))
+plt.figure(figsize=(10, 5))
 
 # Scree Plot
 plt.subplot(1, 2, 1)
@@ -102,7 +102,7 @@ plt.legend()
 plt.grid(True)
 
 plt.tight_layout()
-plt.show()
+# plt.show()
 plt.savefig('c09_PCA-scree.png', bbox_inches="tight", facecolor="white")
 
 # Check how many PCs are needed for 95% variance [cite: 22]

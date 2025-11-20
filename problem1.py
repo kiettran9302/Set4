@@ -65,4 +65,7 @@ plt.legend()
 plt.grid(True)
 
 plt.tight_layout()
-plt.show()
+
+# Save the figure
+plt.savefig('problem1_plots.png', bbox_inches="tight", facecolor="white")
+plt.show() 
