@@ -81,7 +81,7 @@ plot_PCA(pr[:,1],pr[:,2],SMA_resp,[2,8],'Second','Third')
 
 explained_variance_ratio = pca.explained_variance_ratio_
 cumulative_variance = np.cumsum(explained_variance_ratio)
-plt.figure(figsize=(10, 5))
+fig = plt.figure(figsize=(10, 5))
 
 # Scree Plot
 plt.subplot(1, 2, 1)
@@ -103,6 +103,7 @@ plt.grid(True)
 
 plt.tight_layout()
 plt.show()
+plt.savefig('c09_PCA-scree.png', bbox_inches="tight", facecolor="white")
 
 # Check how many PCs are needed for 95% variance [cite: 22]
 n_95 = np.argmax(cumulative_variance >= 0.95) + 1
